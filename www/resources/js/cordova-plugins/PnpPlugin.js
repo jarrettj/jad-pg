@@ -3,7 +3,7 @@ cp.pnp = new function() {
 	
 	// Publish
 	this.publish = function (msg) { 
-		return cordova.exec( this.successEvent, this.failedEvent, "com.jad.ivix.PnpPlugin", 'publish', [msg]); 
+		return cordova.exec( this.successEvent, this.failedEvent, "com.jad.ivixim.PnpPlugin", 'publish', [msg]); 
 	},
     
 	this.successEvent = function (params) {

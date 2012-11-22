@@ -4,7 +4,7 @@ cp.auth = new function() {
 	// Load contacts
 	this.isLoggedIn = function () {
 		//return true;
-		return cordova.exec( this.successLoggedIn, this.failedLoggedIn, "com.jad.ivix.AuthPlugin", 'auth');
+		return cordova.exec( this.successLoggedIn, this.failedLoggedIn, "com.jad.ivixim.AuthPlugin", 'auth');
 	},
     
 	this.successLoggedIn = function (params) {
@@ -24,7 +24,7 @@ cp.auth = new function() {
     },
 	
     this.login = function (username, password) {
-    	return cordova.exec( this.successLogin, this.failedLogin, "com.jad.ivix.AuthPlugin", 'auth', [username, password]);
+    	return cordova.exec( this.successLogin, this.failedLogin, "com.jad.ivixim.AuthPlugin", 'auth', [username, password]);
     },
     
     this.successLogin = function (params) {
