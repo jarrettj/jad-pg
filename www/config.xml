@@ -1,48 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns     = "http://www.w3.org/ns/widgets"
-        xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.jad.phone-con"
-        version   = "2.0.0">
-    <name>JAD Connection</name>
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+       Licensed to the Apache Software Foundation (ASF) under one
+       or more contributor license agreements.  See the NOTICE file
+       distributed with this work for additional information
+       regarding copyright ownership.  The ASF licenses this file
+       to you under the Apache License, Version 2.0 (the
+       "License"); you may not use this file except in compliance
+       with the License.  You may obtain a copy of the License at
 
-    <description>
-        Interact with JAD servers
-    </description>
+         http://www.apache.org/licenses/LICENSE-2.0
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        JAD Team
-    </author>
+       Unless required by applicable law or agreed to in writing,
+       software distributed under the License is distributed on an
+       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+       KIND, either express or implied.  See the License for the
+       specific language governing permissions and limitations
+       under the License.
+-->
+<cordova>
+    <!--
+    access elements control the Android whitelist.
+    Domains are assumed blocked unless set otherwise
+     -->
 
-    <feature name="http://api.phonegap.com/1.0/device" />
+    <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
 
-    <preference name="phonegap-version" value="2.0.0" />
-    <preference name="orientation"      value="default" />
-    <preference name="target-device"    value="universal" />
-    <preference name="fullscreen"       value="false" />
+    <!-- <access origin="https://example.com" /> allow any secure requests to example.com -->
+    <!-- <access origin="https://example.com" subdomains="true" /> such as above, but including subdomains, such as www -->
+    <access origin=".*"/>
 
-    <icon src="jad-logo.png" />
-    <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
-    <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
-    <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
-    <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
-    <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
-    <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
-    <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
-    <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
-    <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
-    <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
-    <icon src="res/icon/webos/icon-64.png"          gap:platform="webos" />
-    <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
-    <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
+    <log level="DEBUG"/>
+    <preference name="useBrowserHistory" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+<plugins>
+    <plugin name="App" value="org.apache.cordova.App"/>
+    <plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/>
+    <plugin name="Device" value="org.apache.cordova.Device"/>
+    <plugin name="Accelerometer" value="org.apache.cordova.AccelListener"/>
+    <plugin name="Compass" value="org.apache.cordova.CompassListener"/>
+    <plugin name="Media" value="org.apache.cordova.AudioHandler"/>
+    <plugin name="Camera" value="org.apache.cordova.CameraLauncher"/>
+    <plugin name="Contacts" value="org.apache.cordova.ContactManager"/>
+    <plugin name="File" value="org.apache.cordova.FileUtils"/>
+    <plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager"/>
+    <plugin name="Notification" value="org.apache.cordova.Notification"/>
+    <plugin name="Storage" value="org.apache.cordova.Storage"/>
+    <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer"/>
+    <plugin name="Capture" value="org.apache.cordova.Capture"/>
+    <plugin name="Battery" value="org.apache.cordova.BatteryListener"/>
+    <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
+    <plugin name="Echo" value="org.apache.cordova.Echo" />
+    <plugin name="Globalization" value="org.apache.cordova.Globalization"/>
+    <plugin name="com.jad.ivix.PnpPlugin" value="com.jad.ivix.PnpPlugin"/>
+    <plugin name="com.jad.ivix.AuthPlugin" value="com.jad.ivix.AuthPlugin"/>
+</plugins>
+</cordova>
 
-    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
-    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
-    <gap:splash src="res/screen/blackberry/screen-225.png"         gap:platform="blackberry" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="res/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
-    <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
-</widget>
